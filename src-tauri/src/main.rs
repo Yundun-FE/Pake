@@ -151,7 +151,7 @@ fn main() -> wry::Result<()> {
                 .set_file_name(&default_path.display().to_string())
                 .save_file();
 
-            let path = dialog_result.unwrap().to_path_buf();
+            let path = dialog_result.unwrap();
             *default_path = path.clone();
             let submitted = proxy
                 .send_event(UserEvent::DownloadStarted(uri, path.display().to_string()))
